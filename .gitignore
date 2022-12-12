@@ -13,6 +13,10 @@ package-lock.json
 
 .vscode
 **/*.DS_Store
+.idea
+idea
+
+masonite.sqlite3
 
 # compiled assets
 storage/compiled
