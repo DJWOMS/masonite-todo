@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/style.css" rel="stylesheet">
+  <title>Категории</title>
+</head>
+<body>
+<section>
+
+  <h2>Список задач</h2>
+  <a class="btn" href="{{ route('task.create') }}">Создать задачу</a>
+
+  @if tasks
+    @for task in tasks
+    <div class="list-item">
+      <div>
+          <span class="
+            @if task.done == 'on'
+              done
+            @else
+              work
+            @endif
+            "
+          >
+          </span>
+        <span>Задача: {{task.text}} | </span>
+        <span>выполнить до: {{task.end_date}}</span>
+      </div>
+      <a href="{{ route('task.single', {'id': task.id}) }}">Редактировать</a>
+    </div>
+    @endfor
+  @endif
+
+</section>
+</body>
+</html>

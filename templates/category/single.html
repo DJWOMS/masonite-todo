@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/style.css" rel="stylesheet">
+  <title>Редактирование категории</title>
+</head>
+<body>
+<section>
+
+  <h2>Редактирование категории</h2>
+
+  <form action="/update/{{category.id}}" method="POST">
+    {{ csrf_field }}
+    <input type="text" name="name" value="{{category.name}}">
+    <p>
+      <button class="btn" type="submit">Сохранить</button>
+      <a class="btn-del" href="/delete/{{category.id}}">Удалить</a>
+    </p>
+  </form>
+
+</section>
+</body>
+</html>

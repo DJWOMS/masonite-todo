@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/style.css" rel="stylesheet">
+  <title>Редактирование задачи</title>
+</head>
+<body>
+
+<section>
+  <h2>Редактирование задачи</h2>
+
+  <form action="{{ route('task.update', {'id': task.id}) }}" method="POST">
+    {{ csrf_field }}
+    <input type="checkbox" name="done" value="on"
+           @if task.done == 'on'
+            checked
+           @endif
+    >
+    <input type="text" name="text" value="{{task.text}}">
+    <input type="datetime-local" name="end_date" value="{{task.end_date}}">
+    <select name="category_id">
+      <option disabled>Выберите категорию</option>
+      @for category in categories
+
+      <option value="{{category.id}}"
+              @if task.category_id== category.id
+                selected
+              @endif
+      >
+        {{category.name}}
+      </option>
+
+      @endfor
+    </select>
+    <div>
+      <button class="btn" type="submit">Сохранить</button>
+      <a class="btn-del" href="{{ route('task.delete', {'id': task.id}) }}">Удалить</a>
+    </div>
+  </form>
+
+</section>
+</body>
+</html>

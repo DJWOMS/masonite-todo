@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/style.css" rel="stylesheet">
+  <title>Категории</title>
+</head>
+<body>
+<section>
+
+  <div class="center">
+    <h2>Список категорий</h2>
+
+    <a class="btn" href="{{ route('category_create') }}">Создать категорию</a>
+  </div>
+
+  @for category in categories
+  <div class="list-item">
+    <a href="/task/{{category.id}}">{{category.name}}</a>
+    <a class="edit" href="/single/{{category.id}}">Редактировать</a>
+  </div>
+  @endfor
+
+</section>
+</body>
+</html>

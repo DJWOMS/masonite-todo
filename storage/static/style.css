@@ -1,0 +1,57 @@
+section {
+    width: 700px;
+    margin: 0 auto;
+    padding: 1px 15px 30px 15px;
+    box-shadow: 0 3px 5px 0 grey;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 5px 0;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 4px grey;
+}
+
+.list-item:hover {
+    background-color: #f7f7f7;
+}
+
+.btn {
+    background-color: #199319;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #223094;
+}
+
+.btn-del {
+    background-color: #e32323;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn-del:hover {
+    background-color: #c91f1f;
+}
+
+.done::after {
+    content: '\2713';
+    color: #199319;
+}
+
+.work::after {
+    content: '\25CF';
+    color: #c91f1f;
+}
